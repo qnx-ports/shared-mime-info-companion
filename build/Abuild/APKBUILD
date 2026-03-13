@@ -2,7 +2,7 @@
 # Maintainer: Aaron Bassett <abassett@qnx.com>
 pkgname=shared-mime-info
 pkgver=2.4
-pkgrel=0
+pkgrel=${pkgrel:-0}
 pkgdesc="Freedesktop.org Shared MIME Info"
 url="https://www.freedesktop.org/Software/shared-mime-info"
 arch="all"
@@ -32,6 +32,7 @@ package() {
 }
 
 
+options="$options ${DISABLE_CHECK:+!check}"
 sha512sums="
 17b443c2c09a432d09e4c83db956f8c0c3a768cfa9ffb8c87cd2d7c9002b95d010094e2bc64dd35946205a0f8b2d87c4f8f0a1faec86443e2edd502aa8f7cc8f  shared-mime-info-2.4.tar.gz
 "
